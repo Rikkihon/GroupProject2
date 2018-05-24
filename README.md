@@ -1,2 +1,10 @@
 # GroupProject2
-as a README with a basic description of what the project will be, an outline of the features, 3 user stories, a link to a user persona, a link to the project management board and a link to basic wireframes.
+#Description of project: 
+This project is for a group (community group, neighborhood association, condo association, etc.) where the members all know each other and have each other’s contact information. The typical user would be a member of the group, living in an apartment or condo or house, who needs a task performed and is looking for someone to perform that task (or referrals to someone who can perform the task).
+
+Individuals enter their name and a request to the board. Others see the request and can post a response. When the response is fulfilled, the request can be deleted from the board.
+
+#User stories:
+Javan needs a babysitter on Thursday night when he goes to class. Pat says she’s free and offers to babysit. Elena offers to give the name of a babysitter.
+Tina’s lawn needs mowing. Ed says he knows of a teenager who mows lawns and will ask.
+Carl needs a mechanic and is looking for recommendations.
