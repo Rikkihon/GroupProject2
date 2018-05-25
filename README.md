@@ -14,4 +14,5 @@ Ed says he knows of a teenager who mows lawns and will ask.
 Carl needs a mechanic and is looking for recommendations.
 
 **Wireframe**
+
 ![alt text](https://github.com/Rikkihon/GroupProject2/blob/master/project2-wireframe.jpg "Sticky Note Board")
