@@ -12,3 +12,6 @@ Elena offers to give the name of a babysitter.
 Tina’s lawn needs mowing. 
 Ed says he knows of a teenager who mows lawns and will ask.
 Carl needs a mechanic and is looking for recommendations.
+
+**Wireframe**
+!project2-wireframe.jpg
