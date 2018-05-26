@@ -1,0 +1,10 @@
+var db = require("./models");
+
+db.User.destroy({
+    where: {
+        id: 1
+    }
+}).then(function(dbUser)
+{
+    console.log(dbUser);
+});
