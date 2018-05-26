@@ -6,22 +6,11 @@
         <ul>
 
          {{#each burgers}} 
-         {{#unless devoured}}
-         {{!-- {{#if devoured}} --}}
-        <div class="row">
-            <div class="col-md-5"></div>
-            <div class="col-md-4">{{this.id}}. {{this.burger_name}}</div>
-            <div class="col-md-2">
-                <button data-burgerid="{{this.id}}" class="eat-burger">Devour It!</button>
-            </div>
-        </div>
-        {{/unless}} 
-        {{/each}}
+         {{!-- Since we're deleting any inactive listings, all are active and only have to do the forEach --}}
 
             <li>
-                <h2>Title #1</h2>
-                <button class="delete" type="submit">X</button>
-                <p>Text Content #1</p>
+                <h2>Insert this user here{{this.user}}</h2><button class="delete" type="submit">X</button>
+                <p>insert this post here{{this.post}}</p>
                 <form class="create-form">
                     <p><button id="respond" type="submit">Respond</button></p>
                     <div class="form-group">
@@ -36,7 +25,7 @@
 
             </li>
 
-
+        {{/each}}
         </ul>
     </div>
 
