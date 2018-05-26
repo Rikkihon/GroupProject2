@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const postsRouter = require('./routes/posts');
 
 
 app.use(morgan('dev'));
@@ -22,7 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/posts', productsRoutes);
+app.use('/posts', postsRouter);
 
 app.use((req, res, next) => {
   const error = new Error('Not Found');
