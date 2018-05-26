@@ -1,5 +1,6 @@
 # GroupProject2
 
+
 **Description of project:**
 This project is for a group of people in New Orleans(community group, neighborhood association, condo association, etc.) where the members all know each other and have each other’s contact information. The typical user would be a member of the group, living in an apartment or condo or house, who needs a task performed and is looking for someone to perform that task (or referrals to someone who can perform the task).
 
