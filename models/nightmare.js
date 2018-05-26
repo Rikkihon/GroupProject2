@@ -1,1 +1,0 @@
-var nightmare = require("nightmare");
