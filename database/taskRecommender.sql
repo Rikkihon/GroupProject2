@@ -8,8 +8,8 @@ create table posts (
     post_id INTEGER(11) AUTO_INCREMENT NOT NULL,
     post varchar(255) NOT NULL,
     user varchar(255) NOT NULL,
-    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    createdAt TIMESTAMP,
+   updatedAt TIMESTAMP,
     PRIMARY KEY (post_id)
 );
 
@@ -19,7 +19,7 @@ create table comments (
     comment varchar(255),
     post_id integer,
     constraint foreign key(post_id) references posts(post_id),
-    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    createdAt TIMESTAMP,
+    updatedAt TIMESTAMP,
     primary key (id)
 );

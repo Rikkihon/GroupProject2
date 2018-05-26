@@ -1,13 +1,16 @@
+
 const db = require('../models');
 
 module.exports = function (app) {
-  // GET route
+  
+
   app.get('/', (req, res) => {
-    db.Burgers.findAll({}).then((dbBurgers) => {
+    db.request_needs.findAll({}).then((dbrequestneeds) => {
       const hbsObject = {
-        burgers: dbBurgers,
+       request_needs: dbrequestneeds
       };
-      res.render('index', hbsObject);
+      res.json('index', hbsObject);
+      console.log(request_needs);
     });
   });
 
@@ -32,7 +35,16 @@ module.exports = function (app) {
       res.json('/');
     });
   });
-
+// 
+app.delete('/')
+   db.Comments.destroy({
+       where: {
+           id: 1
+       }
+   }).then(function)(db.Comments)
+    {
+    console.log(dbUser);    
+    }
 
   // final brace of module export
 };
