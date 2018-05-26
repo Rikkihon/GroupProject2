@@ -23,6 +23,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/', (req, res, next) => {
+  res.send('Home Page Route');
+});
+
 app.use('/posts', postsRouter);
 
 app.use((req, res, next) => {
