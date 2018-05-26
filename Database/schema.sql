@@ -9,6 +9,8 @@ create table posts (
     post varchar(255) NOT NULL,
     user varchar(255) NOT NULL,
     PRIMARY KEY (post_id)
+    createdAt
+    updatedAt
 );
 
 create table comments (
