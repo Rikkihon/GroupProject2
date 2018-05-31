@@ -1,9 +1,8 @@
-
 const db = require('../models');
 
 module.exports = function (app) {
   
-
+//this is the new error
   app.get('/', (req, res) => {
     db.request_needs.findAll({}).then((dbrequestneeds) => {
       const hbsObject = {
@@ -41,7 +40,7 @@ app.delete('/')
        where: {
            id: 1
        }
-   }).then(function)(db.Comments)
+   }).then(function(){})(db.Comments)
     {
     console.log(dbUser);    
     }

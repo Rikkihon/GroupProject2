@@ -1,24 +1,26 @@
 body {
-    background-image: url("project2-background.jpg");
+    background-image: url("/assets/img/project2-background.jpg");
     background-size: cover;
     min-height: 100%;
     max-width: 100%;
   font-family:arial,sans-serif;
   font-size:100%;
-  /* margin:3em; */
-  margin: 1vw 2vw 0 3vw;
+  margin:3em;
   color:#fff;
 }
+
+
 
 h1 {
     color: brown;
     font-family: 'Arial';
     font-size: 48px;
-    padding-left: 25vw;
+    text-align: center;
+    padding-left: 10px;
     font-weight: bold;
     letter-spacing: 4px;
-    margin: 0;
 }
+
 
 h3 {
     color: brown;
@@ -35,38 +37,31 @@ h4 {
     padding-top: 0;
 }
 
-.form-group {
-    margin-bottom: 0px;
+
+img {
+    height: 250px;
+    width: 250px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 250px;
 }
 
 .inputbutton {
     margin-top: 5px;
     float: right;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
-.inputbox{
-    background-color: antiquewhite;
-    width: 14vw;
-    padding: 0;
-    margin-left: .5vw;
-}
 
-.sidebutton {
-    color: black;
-}
-
-.sidetop {
-    margin-bottom: 5px;
-}
-
-.vspace {
-    margin-bottom: 30vw;
-}
 
 
 h2,p{
-    font-size: 14px;
+  font-size:100%;
   font-weight:normal;
   margin: 0;
   padding: 0;
@@ -83,10 +78,10 @@ ul li {
   color:#000;
   background:#ffc;
   display:block;
-  height:15vw;
-  width:15vw;
-  padding:1vw;
-  margin:1vw;
+  height:10em;
+  width:10em;
+  padding:1em;
+  margin:1em;
   float:left;
   position: relative;
 }
@@ -96,4 +91,3 @@ ul li {
     top: 10px;
     right: 10px;
 }
-
