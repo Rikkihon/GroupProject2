@@ -18,11 +18,12 @@
             data: newRequest
         }).then(
             function () {
-        console.log("added new request");
-    // Reload the page to get the updated list
-    location.reload();
-            }
-        );
+            console.log("added new request");
+            // Reload the page to get the updated list
+            location.reload();
+        }).fail(function (error) {
+            console.warn("error");
+        });
     });
 
 $("#respond").on("click", function (event) {
@@ -38,19 +39,24 @@ $("#respond").on("click", function (event) {
     };
     console.log("newResponse ", newResponse);
 
-
-
         // Send the request.
-        $.ajax("/api/burgers/" + id, {
-        type: "PUT",
-            data: id
+        $.ajax("/api/whatever/" + id, {
+            let newResponse = {
+                user: inputName,
+                post: inputResponse,
+                id: id
+            };
+            console.log("newResponse ", newResponse);
+        type: "POST",
+            data: newResponse
         }).then(
             function () {
-        console.log("updated id ", id);
-    // Reload the page to get the updated list
-    location.reload();
-            }
-        );
+                console.log("updated id ", newResponse);
+                // Reload the page to get the updated list
+                location.reload();
+        }).fail(function (error) {
+            console.warn("error");
+        });
     });
 
 
@@ -58,5 +64,16 @@ $(".delete").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
+    let id = $(this).data("id");
+    $.ajax({
+        method: "DELETE",
+        url: "/api/whatever/" + id
+    }).then(
+        function () {
+            // Reload the page to get the updated list
+            location.reload();
+    }).fail(function (error) {
+        console.warn("error");
+    });
     
 });
