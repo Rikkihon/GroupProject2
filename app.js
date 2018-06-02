@@ -5,7 +5,6 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const postsRouter = require('./routes/posts');
 
-
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
   extended: true,
@@ -23,17 +22,17 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', (req, res, next) => {
-  res.send('Home Page Route');
-});
+// app.use('/', (req, res, next) => {
+//   res.send('Home Page Route');
+// });
 
-app.use('/posts', postsRouter);
+//app.use('/poster', postsRouter);
 
-app.use((req, res, next) => {
-  const error = new Error('Not Found');
-  error.status = 404;
-  next(error);
-});
+// app.use((req, res, next) => {
+//   const error = new Error('Not Found');
+//   error.status = 404;
+//   next(error);
+// });
 
 app.use((error, req, res, next) => {
   res.status(error.status || 500);

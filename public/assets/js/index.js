@@ -13,7 +13,7 @@
         console.log("newRequest ", newRequest);
 
         // Send the POST request.
-        $.ajax("/api/whatever", {
+        $.ajax("/api/requests", {
         type: "POST",
             data: newRequest
         }).then(
@@ -41,17 +41,17 @@ $("#respond").on("click", function (event) {
 
 
         // Send the request.
-        $.ajax("/api/burgers/" + id, {
-        type: "PUT",
-            data: id
-        }).then(
-            function () {
-        console.log("updated id ", id);
-    // Reload the page to get the updated list
-    location.reload();
-            }
-        );
-    });
+    //     $.ajax("/api/request_needs/" + id, {
+    //     type: "PUT",
+    //         data: id
+    //     }).then(
+    //         function () {
+    //     console.log("updated id ", id);
+    // // Reload the page to get the updated list
+    // location.reload();
+    //         }
+    //     );
+    // });
 
 
 $(".delete").on("click", function (event) {
