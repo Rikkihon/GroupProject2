@@ -18,11 +18,12 @@
             data: newRequest
         }).then(
             function () {
-        console.log("added new request");
-    // Reload the page to get the updated list
-    location.reload();
-            }
-        );
+            console.log("added new request");
+            // Reload the page to get the updated list
+            location.reload();
+        }).fail(function (error) {
+            console.warn("error");
+        });
     });
 
 $("#respond").on("click", function (event) {
@@ -38,9 +39,8 @@ $("#respond").on("click", function (event) {
     };
     console.log("newResponse ", newResponse);
 
-
-
         // Send the request.
+<<<<<<< HEAD:public/assets/js/index.js
     //     $.ajax("/api/request_needs/" + id, {
     //     type: "PUT",
     //         data: id
@@ -52,11 +52,42 @@ $("#respond").on("click", function (event) {
     //         }
     //     );
     // });
+=======
+        $.ajax("/api/whatever/" + id, {
+            let newResponse = {
+                user: inputName,
+                post: inputResponse,
+                id: id
+            };
+            console.log("newResponse ", newResponse);
+        type: "POST",
+            data: newResponse
+        }).then(
+            function () {
+                console.log("updated id ", newResponse);
+                // Reload the page to get the updated list
+                location.reload();
+        }).fail(function (error) {
+            console.warn("error");
+        });
+    });
+>>>>>>> f973d9795cb4ed769f74b2dde9eeb60500ea18c9:public/assets/js/postit.js
 
 
 $(".delete").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
+    let id = $(this).data("id");
+    $.ajax({
+        method: "DELETE",
+        url: "/api/whatever/" + id
+    }).then(
+        function () {
+            // Reload the page to get the updated list
+            location.reload();
+    }).fail(function (error) {
+        console.warn("error");
+    });
     
 });
