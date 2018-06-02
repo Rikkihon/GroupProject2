@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "danito66$",
+    "password": "Kafka#678",
     "database": "TaskRecommender_DB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "danito66$",
+    "password": "Kafka#678",
     "database": "TaskRecommender_DB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "danito66$",
+    "password": "Kafka#678",
     "database": "TaskRecommender_DB",
     "host": "127.0.0.1",
     "dialect": "mysql"
