@@ -8,3 +8,4 @@ INSERT INTO comments (name, user) VALUES ('I know of a teenager who can do this 
 INSERT INTO comments (name, user) VALUES ('My friend has a responsible kid who can babysit for you, let me give you her phone number', 'Elana');
  
 
+
