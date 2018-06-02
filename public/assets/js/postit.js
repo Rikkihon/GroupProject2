@@ -13,7 +13,7 @@
         console.log("newRequest ", newRequest);
 
         // Send the POST request.
-        $.ajax("/api/whatever", {
+        $.ajax("/api/request_needs", {
         type: "POST",
             data: newRequest
         }).then(
@@ -40,7 +40,7 @@ $("#respond").on("click", function (event) {
     console.log("newResponse ", newResponse);
 
         // Send the request.
-        $.ajax("/api/whatever/" + id, {
+        $.ajax("/api/requests/" + id, {
             let newResponse = {
                 user: inputName,
                 post: inputResponse,
@@ -67,7 +67,7 @@ $(".delete").on("click", function (event) {
     let id = $(this).data("id");
     $.ajax({
         method: "DELETE",
-        url: "/api/whatever/" + id
+        url: "/api/delete_request/" + id
     }).then(
         function () {
             // Reload the page to get the updated list
