@@ -5,8 +5,6 @@ const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const db = require("./models");
 
-const server = http.createServer(app);
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
