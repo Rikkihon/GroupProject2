@@ -13,7 +13,7 @@
         console.log("newRequest ", newRequest);
 
         // Send the POST request.
-        $.ajax("/api/requests", {
+        $.ajax("/api/request_needs", {
         type: "POST",
             data: newRequest
         }).then(
@@ -40,20 +40,7 @@ $("#respond").on("click", function (event) {
     console.log("newResponse ", newResponse);
 
         // Send the request.
-<<<<<<< HEAD:public/assets/js/index.js
-    //     $.ajax("/api/request_needs/" + id, {
-    //     type: "PUT",
-    //         data: id
-    //     }).then(
-    //         function () {
-    //     console.log("updated id ", id);
-    // // Reload the page to get the updated list
-    // location.reload();
-    //         }
-    //     );
-    // });
-=======
-        $.ajax("/api/whatever/" + id, {
+        $.ajax("/api/requests/" + id, {
             let newResponse = {
                 user: inputName,
                 post: inputResponse,
@@ -71,7 +58,6 @@ $("#respond").on("click", function (event) {
             console.warn("error");
         });
     });
->>>>>>> f973d9795cb4ed769f74b2dde9eeb60500ea18c9:public/assets/js/postit.js
 
 
 $(".delete").on("click", function (event) {
@@ -81,7 +67,7 @@ $(".delete").on("click", function (event) {
     let id = $(this).data("id");
     $.ajax({
         method: "DELETE",
-        url: "/api/whatever/" + id
+        url: "/api/delete_request/" + id
     }).then(
         function () {
             // Reload the page to get the updated list
