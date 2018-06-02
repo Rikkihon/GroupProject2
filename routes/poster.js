@@ -1,6 +1,6 @@
 var db = require('../models');
 var express = require("express");
-const router = require('/Users/rikki/Desktop/GroupProject2/routes/posts.js')
+const router = require('./posts.js')
 
 module.exports = function (app) {
   
