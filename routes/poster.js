@@ -1,33 +1,21 @@
 var db = require('../models');
 var express = require("express");
-const router = require('/Users/rikki/Desktop/GroupProject2/routes/posts.js')
+const router = require('./posts.js')
 
 module.exports = function (app) {
   
 
   app.get('/', (req, res) => {
-      console.log("test")
       db.request_needs.findAll({
-        include: [db.comments]
+        //include: [db.comments]
       
       }).then(function(data){
-        res.send(data);
+        let hbsObject = {
+          request_needs: data
+        };
+        res.render("index", hbsObject);
         //use res.render when handlebars starts working 
-        console.log(data);
-       {
-         //console log the whole response, 
-         //then the piece from part from sequelize, 
-         //
-         //then get the object built, then log out the data into handlebars, then get the handlebars size 
-      // const hbsObject = {
-      // request_needs: name,
-      // request_needs: post,
-      // };
-      // this is an object that we can render from the html side using res.render on the HTML routes, 
-      //look at handlebars assignment for this. 
-    //res.render('index', hbsObject);// this would render the handlebars object 
-      //console.log(hbsObject);
-    }
+        console.log(hbsObject);
     });
   });
 
