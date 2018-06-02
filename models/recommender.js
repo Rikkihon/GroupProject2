@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 module.exports = function(sequelize, DataTypes) {
     var request_needs = sequelize.define("request_needs", {
       user: {
@@ -25,17 +24,6 @@ module.exports = function(sequelize, DataTypes) {
       });
     };
   
-=======
-   module.exports = function(sequelize, DataTypes)  
-  {
-      var request_needs = sequelize.define("request_needs", {
-        post_id: DataTypes.INTEGER,
-        user: DataTypes.STRING,
-        post: DataTypes.STRING},{
-        createdAt: DataTypes.TIMESTAMP,
-        updatedAt: DataTypes.TIMESTAMP
-     })
->>>>>>> f973d9795cb4ed769f74b2dde9eeb60500ea18c9
     return request_needs;
   };
   
