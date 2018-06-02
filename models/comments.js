@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var comments = sequelize.define("comments", {
     // Giving the comments model a name of type STRING
-    name: DataTypes.STRING,
+    name: DataTypes.TEXT,
   });
 
   comments.associate = function(models) {
