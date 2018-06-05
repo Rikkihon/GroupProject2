@@ -33,6 +33,9 @@ module.exports = function (app) {
 //   });
 //   // POST route
   
+  // app.post('/request_needs', (req, res) => {
+  //  res.send("this worked!");
+  // });
 //   router.post('/request_needs', (req, res) => {
 //     db.request_needs.create({
 //       request_needs_name: req.body.request_needs_name,

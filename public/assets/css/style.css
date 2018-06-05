@@ -60,7 +60,7 @@ img {
 
 .inputbox{
     background-color: antiquewhite;
-    width: 14vw;
+    width: 15vw;
     padding: 0;
     margin-left: .5vw;
 }
@@ -76,11 +76,6 @@ img {
 .vspace {
     margin-bottom: 30vw;
 }
-
-
-
-
-
 
 h2,p{
   font-size:100%;
