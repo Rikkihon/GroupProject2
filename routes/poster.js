@@ -9,20 +9,14 @@ module.exports = function (app) {
     db.request_needs.findAll({
       include: [db.comments],
       where: query,
-
     }).then(function (data) {
-      let hbsObject = {
-      }
+      let hbsObject = {};
       for (var i = 0; i < data.length; i++) {
-
         hbsObject[data[i].dataValues.user] = data[i].dataValues.post
-
-      }
-
+      };
+      res.render("index", hbsObject);
       console.log(hbsObject);
-
-
-    })
+    });
   });
 };
 
