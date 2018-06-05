@@ -3,21 +3,22 @@ var express = require("express");
 const router = require('./posts.js')
 
 module.exports = function (app) {
-  
 
   app.get('/', (req, res) => {
-      db.request_needs.findAll({
-        //include: [db.comments]
-      
-      }).then(function(data){
-        let hbsObject = {
-          request_needs: data
-        };
-        res.render("index", hbsObject);
-        //use res.render when handlebars starts working 
-        console.log(hbsObject);
+    var query = {};
+    db.request_needs.findAll({
+      include: [db.comments],
+      where: query,
+    }).then(function (data) {
+      let hbsObject = {};
+      for (var i = 0; i < data.length; i++) {
+        hbsObject[data[i].dataValues.user] = data[i].dataValues.post
+      };
+      res.render("index", hbsObject);
+      console.log(hbsObject);
     });
   });
+};
 
 //  router.get('/requests', function (req, res) {   
 //   db.request_needs.findOne({
@@ -32,10 +33,6 @@ module.exports = function (app) {
 //   });
 //   });
 //   // POST route
-  
-  // app.post('/request_needs', (req, res) => {
-  //  res.send("this worked!");
-  // });
 //   router.post('/request_needs', (req, res) => {
 //     db.request_needs.create({
 //       request_needs_name: req.body.request_needs_name,
@@ -45,14 +42,14 @@ module.exports = function (app) {
 //   });
 //   // PUT route
 //   let newrequest_needs =  new request_needs('Need new car detailing place, any recommendations?','Jorge');
-  
+
 //   router.put('/api/request_needs/:id', (req, res) => {
 //     db.request_needs.update(newrequest_needs,{
 //       where: {
 //         //id: req.params.id,
 //         id: 1,
 //       }
-    
+
 //     }).then((dbrequest_needs) => {
 //       res.json('/');
 //     });
@@ -72,4 +69,4 @@ module.exports = function (app) {
 //     }
 
   // final brace of module export
-};
+
