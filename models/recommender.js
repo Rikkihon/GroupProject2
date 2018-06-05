@@ -2,14 +2,14 @@ module.exports = function(sequelize, DataTypes) {
     var request_needs = sequelize.define("request_needs", {
       user: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1]
         }
       },
       post: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
         len: [1]
       }
     });

@@ -18,7 +18,19 @@ module.exports = function (app) {
       console.log(hbsObject);
     });
   });
-};
+
+  //POST route
+  app.post('/api/request_needs', (req, res) => {
+    db.request_needs.create(req.body
+      // {request_needs_name: req.body.request_needs_name}
+    ).then((dbrequest_needs) => {
+      // res.json(dbrequest_needs);
+    }).catch(function (err) {
+      res.json(err);
+    });
+  });
+  // final brace of module export
+}
 
 //  router.get('/requests', function (req, res) {   
 //   db.request_needs.findOne({
@@ -66,7 +78,3 @@ module.exports = function (app) {
 //     {
 //     console.log("This should have deleted things");   
 //     console.log(db.request_needsf);    
-//     }
-
-  // final brace of module export
-
