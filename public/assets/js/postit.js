@@ -2,7 +2,7 @@
  $(".sidebutton").on("click", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
-
+        console.log("sidebutton works");
     let inputName = $("#name").val().trim();
     let inputRequest = $("#request").val().trim();
 
@@ -13,17 +13,22 @@
         console.log("newRequest ", newRequest);
 
         // Send the POST request.
-        $.ajax("/api/request_needs", {
-        type: "POST",
-            data: newRequest
-        }).then(
-            function () {
-            console.log("added new request");
-            // Reload the page to get the updated list
-            location.reload();
-        }).fail(function (error) {
-            console.warn("error");
-        });
+        // $.ajax("/api/request_needs", {
+        // type: "POST",
+        //     data: newRequest
+        // })
+        // $.post("/api/request_needs", newRequest)
+        // .then(
+        //     function (response) {
+        //     console.log("added new request ", response);
+        //     // Reload the page to get the updated list
+        //     location.reload();
+        // }).fail(function (error) {
+        //     console.warn("error");
+        // });
+        $.post("request_needs", newRequest, function (response) {
+         console.log("response ", response);
+     });
     });
 
 $("#respond").on("click", function (event) {
@@ -40,18 +45,15 @@ $("#respond").on("click", function (event) {
     console.log("newResponse ", newResponse);
 
         // Send the request.
-        $.ajax("/api/requests/" + id, {
-            let newResponse = {
-                user: inputName,
-                post: inputResponse,
-                id: id
-            };
-            console.log("newResponse ", newResponse);
-        type: "POST",
-            data: newResponse
-        }).then(
-            function () {
-                console.log("updated id ", newResponse);
+        // $.ajax("/api/requests/" + id, 
+        //     newResponse
+        //     console.log("newResponse ", newResponse);
+        // type: "POST",
+        //     data: newResponse
+        $.post("requests/" + id, newResponse )
+        .then(
+            function (response) {
+                console.log("response ", response);
                 // Reload the page to get the updated list
                 location.reload();
         }).fail(function (error) {
@@ -67,7 +69,7 @@ $(".delete").on("click", function (event) {
     let id = $(this).data("id");
     $.ajax({
         method: "DELETE",
-        url: "/api/delete_request/" + id
+        url: "delete_request/" + id
     }).then(
         function () {
             // Reload the page to get the updated list
