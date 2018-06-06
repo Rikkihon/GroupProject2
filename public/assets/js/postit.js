@@ -12,20 +12,12 @@ $(".sidebutton").on("click", function (event) {
     };
     console.log("newRequest ", newRequest);
 
-    // Send the POST request.
-    $.ajax("/api/request_needs", {
-        method: "POST",
-        url: "/api/request_needs",
-        data: newRequest
-    }).then(
-            function (response) {
-                console.log("added new request ", response);
-                // Reload the page to get the updated list
-                location.reload();
-             })//.fail(function (error) {
-            //     console.warn("error");
-            // });
-});
+
+     $.post("api/requests", newRequest, function (response) {
+         console.log("response ", response);
+     });
+    });
+
 
 $("#respond").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
