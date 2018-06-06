@@ -1,79 +1,76 @@
 
- $(".sidebutton").on("click", function (event) {
-        // Make sure to preventDefault on a submit event.
-        event.preventDefault();
+$(".sidebutton").on("click", function (event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
 
     let inputName = $("#name").val().trim();
     let inputRequest = $("#request").val().trim();
 
-        let newRequest = {
-            user: inputName,
-            post: inputRequest
-        };
-        console.log("newRequest ", newRequest);
+    let newRequest = {
+        user: inputName,
+        post: inputRequest
+    };
+    console.log("newRequest ", newRequest);
 
-        // Send the POST request.
-        $.ajax("/api/request_needs", {
+    // Send the POST request.
+    $.ajax("/api/request_needs", {
         type: "POST",
-            data: newRequest
-        }).then(
-            function () {
+        data: newRequest
+    }).then(
+        function () {
             console.log("added new request");
             // Reload the page to get the updated list
             location.reload();
         }).fail(function (error) {
             console.warn("error");
         });
-    });
+});
 
 $("#respond").on("click", function (event) {
-        // Make sure to preventDefault on a submit event.
-        event.preventDefault();
-
-    let inputName = $("#name").val().trim();
-    let inputResponse = $("#response").val().trim();
-
-    let newResponse = {
-        user: inputName,
-        post: inputResponse
-    };
-    console.log("newResponse ", newResponse);
-
-        // Send the request.
-        $.ajax("/api/requests/" + id, {
-            let newResponse = {
-                user: inputName,
-                post: inputResponse,
-                id: id
-            };
-            console.log("newResponse ", newResponse);
-        type: "POST",
-            data: newResponse
-        }).then(
-            function () {
-                console.log("updated id ", newResponse);
-                // Reload the page to get the updated list
-                location.reload();
-        }).fail(function (error) {
-            console.warn("error");
-        });
-    });
-
-
-$(".delete").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    let id = $(this).data("id");
+    let name = $("#name").val().trim();
+    let comments = $("#response").val().trim();
+
+    let newResponse = {
+        user: name,
+        post: comments
+    };
+    // console.log("newResponse ", newResponse);
+
+    // Send the request.
     $.ajax({
-        method: "DELETE",
-        url: "/api/delete_request/" + id
+        type: "POST",
+        url: "api/requests",
+        data: newResponse
     }).then(
-        function () {
+        function (newPost) {
+            console.log("updated id ", data, newResponse);
             // Reload the page to get the updated list
             location.reload();
-    }).fail(function (error) {
-        console.warn("error");
-    });
-    
+        }).fail(function (error) {
+            console.warn("error");
+        });
 });
+
+$(".delete").on("click", function (event) {
+    var id = $(this).data("id");
+    console.log("the ID is", id);
+    // Send the DELETE request.
+    $.ajax(`/delete_request/${id}`, {
+        type: "DELETE"
+    }).then(
+        function () {
+            console.log("deleted post", id);
+            // Reload the page to get the updated list
+            
+        }
+    );
+   
+    location.reload();
+});
+
+
+
+// });

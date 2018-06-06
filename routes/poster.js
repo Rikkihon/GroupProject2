@@ -1,72 +1,83 @@
 var db = require('../models');
-var express = require("express");
-const router = require('./posts.js')
+const express = require('express');
+const router = express.Router();
+
+var request_needs = require("../models/comments.js");
+var comments = require("../models/recommender.js");
 
 module.exports = function (app) {
-  
-
-  app.get('/', (req, res) => {
-      db.request_needs.findAll({
-        //include: [db.comments]
-      
-      }).then(function(data){
-        let hbsObject = {
-          request_needs: data
-        };
-        res.render("index", hbsObject);
-        //use res.render when handlebars starts working 
-        console.log(hbsObject);
-    });
+  app.get('/', function (req, res) {
+    db.request_needs.findAll({
+      include: [db.comments],
+    }).then(function (data) {
+      let hbsObject = {
+        posts: data
+      }
+      //   for (var i = 0; i < data.length; i++){
+      //   hbsObject: [data[i].dataValues.user] = data[i].dataValues.post 
+      // }
+      res.render("index", hbsObject);
+    })
   });
 
-//  router.get('/requests', function (req, res) {   
-//   db.request_needs.findOne({
-//   where: {
-//     // id: req.params.id
-//     id: 1,
-//   },
-//   include: [db.comment]
-//   }).then(function(data) {
-//     res.render(db.request_needs);
-//     console.log(data);
-//   });
-//   });
-//   // POST route
-  
-//   router.post('/request_needs', (req, res) => {
-//     db.request_needs.create({
-//       request_needs_name: req.body.request_needs_name,
-//     }).then((dbrequest_needs) => {
-//       res.render(dbrequest_needs);
-//     });
-//   });
-//   // PUT route
-//   let newrequest_needs =  new request_needs('Need new car detailing place, any recommendations?','Jorge');
-  
-//   router.put('/api/request_needs/:id', (req, res) => {
-//     db.request_needs.update(newrequest_needs,{
-//       where: {
-//         //id: req.params.id,
-//         id: 1,
-//       }
-    
-//     }).then((dbrequest_needs) => {
-//       res.json('/');
-//     });
-//   });
-// // 
-// router.delete('/delete_request')
-//    db.request_needs.destroy({
-//        where: {
-//           //  id: req.params.id
-//           id: 1
-//            //we will want to make this an input
-//        }
-//    }).then(db.request_needs)
-//     {
-//     console.log("This should have deleted things");   
-//     console.log(db.request_needsf);    
-//     }
+  //  app.get('/requests',(req, res) => { 
+  //   db.request_needs.findOne({
+  //   where: {
+  //     id: req.params.id
+  //     //id: 2,
+  //   },
+  //   //include: [db.comment]
+  //   }).then(function(data) {
+  //     let hbsObject2 = {
+  //        hbsObject2: data.user,
+  //        hbsObject3: data.post
+  //     }
+  //     console.log(data.user , ':', data.post)
+  //     res.render("index", hbsObject2)
+  //     //res.send([data[0].user);
+  //   });
+  //   });
+
+  // POST route
+
+  // app.post('/api/requests', (req, res) => {
+  //   console.log("This is the req" , req)
+  //   db.request_needs.update({
+  //     post: req.params.request,
+  //     user: req.params.name,
+  //     //post: req.query.name
+  //   }).then((dbrequest_needs) => {
+  //     console.log("This is a test!" ,dbrequest_needs)
+  //     res.render("index", hbsObject);
+  //   });
+  // });
+  //   // PUT route
+
+  // router.put('/api/request_needs/:id', (req, res) => {
+  //   db.request_needs.update(newrequest_needs,{
+  //     where: {
+  //       //id: req.params.id,
+  //       id: 1,
+  //     }
+
+  //   }).then((dbrequest_needs) => {
+  //     res.json('/');
+  //   });
+  // });
+  // // 
+  app.delete('/delete_request/:id', function (req, res) {
+    db.request_needs.destroy({
+      where: {
+        id: req.params.id
+        //we will want to make this an input
+      }
+    }).then(data)
+    {
+      console.log("This should have deleted things", data);
+
+    }
+  })
+
 
   // final brace of module export
 };
