@@ -8,8 +8,8 @@
             {{#each posts}}
             <li>
                 <h2>{{this.user}}</h2>
-                <button class="delete" type="submit">X</button>
-                <p>{{this.comment}}</p>
+                <button class="delete" type="submit" data-id="{{this.id}}">X</button>
+                <p>{{this.post}}</p>
                 {{#each comments}}
                     <p>{{this.user}}</p>
                     <p>{{this.post}}</p>

@@ -50,9 +50,8 @@ module.exports = function (app) {
       res.render("index", hbsObject);
     });
   });
-  //   // PUT route
 
-=======
+
 
 var request_needs = require("../models/comments.js");
 var comments = require("../models/recommender.js");
@@ -90,19 +89,5 @@ module.exports = function (app) {
   });
   });
 
- // POST route
+}};
   
-  app.post('/api/requests', (req, res) => {
-    console.log("This is the req" , req)
-    db.request_needs.update({
-      post: req.params.request,
-      user: req.params.name,
-      //post: req.query.name
-    }).then((dbrequest_needs) => {
-      console.log("This is a test!" ,dbrequest_needs)
-      res.render("index", hbsObject);
-    });
-  });
-//   // PUT route
-  
-
