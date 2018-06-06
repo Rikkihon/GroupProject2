@@ -22,7 +22,7 @@ $(".sidebutton").on("click", function (event) {
         function (response) {
             console.log("added new request ", response);
             // Reload the page to get the updated list
-            //location.reload();
+            location.reload();
         })//.fail(function (error) {
     //     console.warn("error");
     // });
