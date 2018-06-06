@@ -12,6 +12,7 @@ $(".sidebutton").on("click", function (event) {
     };
     console.log("newRequest ", newRequest);
 
+
     // Send the POST request.
     $.ajax("/api/request_needs", {
         method: "POST",
@@ -26,6 +27,7 @@ $(".sidebutton").on("click", function (event) {
     //     console.warn("error");
     // });
 });
+
 
 $("#respond").on("click", function (event) {
     // Make sure to preventDefault on a submit event.

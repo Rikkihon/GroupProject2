@@ -1,3 +1,4 @@
+
 const db = require('../models');
 
 module.exports = function (app) {
@@ -47,6 +48,7 @@ module.exports = function (app) {
     });
   });
 
+
   // PUT route
   // router.put('/api/request_needs/:id', (req, res) => {
   //   db.request_needs.update(newrequest_needs,{
@@ -73,5 +75,5 @@ module.exports = function (app) {
     }
   });
 
-  // final brace of module export
-};
+//last brace of module export
+}
