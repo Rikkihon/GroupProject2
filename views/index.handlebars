@@ -11,8 +11,8 @@
                 <button class="delete" type="submit" data-id="{{this.id}}">X</button>
                 <p>{{this.post}}</p>
                 {{#each comments}}
-                    <p>{{this.user}}</p>
-                    <p>{{this.post}}</p>
+                <p>{{this.user}}</p>
+                <p>{{this.post}}</p>
                 {{/each}}
                 <form class="create-form">
                     <p>
@@ -23,14 +23,14 @@
                             <h2>Name:</h2>
                         </label>
                         <br/>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="responseName" name="name">
                     </div>
                     <div class="form-group">
                         <label for="request">
                             <h2>Response:</h2>
                         </label>
                         </br/>
-                        <textarea id="request" name="request" rows="2" cols="20"></textarea>
+                        <textarea id="responseRequest" name="request" rows="2" cols="20"></textarea>
                     </div>
                 </form>
 
@@ -42,7 +42,7 @@
     <div class="col-md-2 ">
 
         <div class="row vspace">
-           
+
         </div>
 
         <div class="row inputbox">
@@ -57,7 +57,7 @@
                         <h3>Name:</h3>
                     </label>
                     <br/>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="submitName" name="name">
                 </div>
 
                 <div class="form-group">
@@ -65,7 +65,7 @@
                         <h3>Request:</h3>
                     </label>
                     <br/>
-                    <textarea id="request" name="request" rows="2" cols="20"></textarea>
+                    <textarea id="submitRequest" name="request" rows="2" cols="20"></textarea>
                 </div>
 
                 <p>
