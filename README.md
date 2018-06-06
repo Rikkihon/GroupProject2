@@ -9,11 +9,11 @@ Individuals enter their name and a request to the board. Others see the request 
 **User stories**
 Javan needs a babysitter on Thursday night when he goes to class. 
 Pat says she’s free and offers to babysit. 
-Elena offers to give the name of a babysitter.
+Helena offers to give the name of a babysitter.
 Tina’s lawn needs mowing. 
 Ed says he knows of a teenager who mows lawns and will ask.
 Carl needs a mechanic and is looking for recommendations.
 
 **Wireframe**
 
-![alt text](https://github.com/Rikkihon/GroupProject2/blob/master/projectdocs/images/project2-wireframe.jpg "Sticky Note Board")
+![alt text](https://github.com/Rikkihon/GroupProject2/blob/master/projectdocs/images/project2-wireframe.png "Sticky Note Board")
