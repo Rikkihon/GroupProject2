@@ -3,9 +3,9 @@ $(".sidebutton").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     console.log("sidebutton works");
-    let inputName = $("#name").val().trim();
-    let inputRequest = $("#request").val().trim();
-
+    let inputName = $("#submitName").val().trim();
+    let inputRequest = $("#submitRequest").val().trim();
+    console.log(inputName);
     let newRequest = {
         user: inputName,
         post: inputRequest
@@ -18,13 +18,13 @@ $(".sidebutton").on("click", function (event) {
         url: "/api/request_needs",
         data: newRequest
     }).then(
-            function (response) {
-                console.log("added new request ", response);
-                // Reload the page to get the updated list
-                location.reload();
-             })//.fail(function (error) {
-            //     console.warn("error");
-            // });
+        function (response) {
+            console.log("added new request ", response);
+            // Reload the page to get the updated list
+            //location.reload();
+        })//.fail(function (error) {
+    //     console.warn("error");
+    // });
 });
 
 $("#respond").on("click", function (event) {
@@ -59,19 +59,16 @@ $("#respond").on("click", function (event) {
 
 
 $(".delete").on("click", function (event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    let id = $(this).data("id");
-    $.ajax({
-        method: "DELETE",
-        url: "delete_request/" + id
+    var id = $(this).data("id");
+    console.log("the ID is", id);
+    // Send the DELETE request.
+    $.ajax(`/delete_request/${id}`, {
+        type: "DELETE"
     }).then(
         function () {
-            // Reload the page to get the updated list
-            location.reload();
-        }).fail(function (error) {
-            console.warn("error");
-        });
-
+            console.log("deleted post", id);
+            // Reload the page to get the updated list    
+        }
+    );
+    location.reload();
 });
