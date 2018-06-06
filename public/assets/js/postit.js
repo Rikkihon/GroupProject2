@@ -26,7 +26,7 @@
         // }).fail(function (error) {
         //     console.warn("error");
         // });
-        $.post("request_needs", newRequest, function (response) {
+     $.post("api/requests", newRequest, function (response) {
          console.log("response ", response);
      });
     });
